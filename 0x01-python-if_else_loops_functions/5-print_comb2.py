@@ -4,4 +4,4 @@ for i in range(99):
         print("0{}".format(i), end=", ")
     else:
         print(i, end=", ")
-print("99\n")
+print("{}\n".format(i + 1), end="")
