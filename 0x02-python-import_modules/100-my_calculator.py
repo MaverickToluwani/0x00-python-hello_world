@@ -3,10 +3,15 @@ import sys
 from calculator_1 import add, sub, div, mul
 
 if __name__ == "__main__":
+    msg = "Unknown operator. Available operators: +, -, * and /"
     if len(sys.argv) < 4:
-        sys.stderr.write("Unknown operator. Available operators: +, -, * and /")
-        return 1
+        sys.stderr.write(msg)
+
     def calculator():
+        if len(sys.argv) < 4:
+            sys.stderr.write(msg)
+            return 1
+
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         sign = sys.argv[2]
@@ -23,6 +28,7 @@ if __name__ == "__main__":
             print("{} {} {} = {} ".format(a, sign, b, div(a, b)))
             return 0
         else:
-            sys.stderr.write("Unknown operator. Available operators: +, -, * and /\n")
+            sys.stderr.write(msg)
             return 1
+
 print(calculator())
