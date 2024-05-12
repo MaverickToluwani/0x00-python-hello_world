@@ -11,7 +11,7 @@ class Square:
     Attributes:
         __size (int): size of square
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         Conditional Loop below to check if value enters is an
         integer and if size < 0
@@ -34,4 +34,4 @@ class Square:
         Returns:
             int: Area of the square
         """
-        return (self.__size)**2
+        return ((self.__size)**2)
