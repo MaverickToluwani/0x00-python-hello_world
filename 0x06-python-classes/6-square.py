@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+# square simulation
 """ A module that defines a square"""
 
 
@@ -40,11 +40,10 @@ class Square:
             TypeError: If value is not an integer
             ValueError: If value is less than or equals to 0
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        else:
-            if value < 0:
-                raise valueError("size must be >= 0")
+        if value < 0:
+            raise ValueError("size must be >= 0")
 
     @property
     def position(self):
@@ -60,7 +59,7 @@ class Square:
         Raises:
             TypeError: if value is not a tuple of 2 positive integer
         """
-        if type(value) == tuple and len(value) == 2:
+        if isinstance(value, tuple) and len(value) == 2:
             for elem in value:
                 if elem < 0:
                     raise TypeError("Position should be \
