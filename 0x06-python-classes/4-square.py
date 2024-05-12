@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# square simulation
 
 """A module that defines a square"""
 
@@ -10,7 +11,7 @@ class Square:
         __size (int): The size of the square.
     """
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """Initializes a Square instance with the given size.
 
         Args:
@@ -34,7 +35,7 @@ class Square:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
