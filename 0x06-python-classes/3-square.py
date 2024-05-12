@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# square module simulation
 
 """ modules defines a square """
 
@@ -21,12 +22,11 @@ class Square:
         Raises:
             TypeError: if size is not an integer
             ValueError: if size is less than 0 """
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        else:
-            if size < 0:
-                raise ValueError("Size must be >= 0")
-            self.__size = size
+        if size < 0:
+            raise ValueError("Size must be >= 0")
+        self.__size = size
 
     def area(self):
         """Calculate the area of the square
