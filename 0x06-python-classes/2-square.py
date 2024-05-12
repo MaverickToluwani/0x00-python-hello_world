@@ -10,12 +10,13 @@ class Square:
         """Initializing the square class
         Args:
             size(int): size of square,default value is 0
+
         Raises:
-            TypeError: if size is not and integer
+            TypeError: if size is not an integer
             ValueError: if size less than or equals to zero
         """
 
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
