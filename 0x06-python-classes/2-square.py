@@ -7,10 +7,7 @@ class Square:
     """ A simple class to define a square"""
 
     def __init__(self, size=0):
-        """Initializing this square
-        Conditional Loop below to check if value enters is an
-        integer and if size > 0
-
+        """Initializing the square class
         Args:
             size(int): size of square,default value is 0
 
