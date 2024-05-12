@@ -5,8 +5,9 @@
 
 class Square:
     """ A simple class to define a square"""
+
     def __init__(self, size=0):
-        """
+        """Initializing this square
         Conditional Loop below to check if value enters is an
         integer and if size > 0
 
@@ -17,6 +18,7 @@ class Square:
             TypeError: if size is not and integer
             ValueError: if size less than or equals to zero
         """
+
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
