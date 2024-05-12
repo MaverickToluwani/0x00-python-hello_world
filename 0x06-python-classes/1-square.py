@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# modules defines a square
 
 
 class Square:
