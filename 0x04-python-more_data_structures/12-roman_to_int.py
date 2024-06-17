@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def roman_to_int(roman_string) -> int:
     tbl = {
             'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5,
@@ -10,8 +11,8 @@ def roman_to_int(roman_string) -> int:
             }
     Rn = roman_string
     if roman_string in tbl:
-        return tbl[Rn]
-    else:
+        return tbl[roman_string]
+    elif Rn not in tbl:
         if len(Rn) <= 2:
             if len(Rn) == 1:
                 return tbl[Rn[0]]
@@ -24,7 +25,7 @@ def roman_to_int(roman_string) -> int:
             elif len(Rn) == 4:
                 return c3 + tbl[Rn[3]]
             elif len(roman_string) == 5:
-                    return c3 + tbl[Rn[3]] + tbl[Rn[4]]
+                return c3 + tbl[Rn[3]] + tbl[Rn[4]]
         elif len(Rn) >= 6 and len(Rn) < 9:
             c3 = tbl[Rn[0]] + tbl[Rn[1]] + tbl[Rn[2]]
             c4_6 = tbl[Rn[3]] + tbl[Rn[4]] + tbl[Rn[5]]
@@ -45,3 +46,5 @@ def roman_to_int(roman_string) -> int:
                 return c3 + c4_6 + c7_9 + tbl[Rn[9]]
             elif len(Rn) == 11:
                 return c3 + c4_6 + c7_9 + c10_11
+    else:
+        return
