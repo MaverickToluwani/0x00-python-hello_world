@@ -4,8 +4,8 @@ from calculator_1 import add, sub, div, mul
 
 if __name__ == "__main__":
     def calculator():
-        usg = "Usage: ./100-my_calculator.py <a> <operator> <b>\n"
-        msg = "Unknown operator. Available operators: +, -, * and /\n"
+        usg = "Usage: ./100-my_calculator.py <a> <operator> <b>"
+        msg = "Unknown operator. Available operators: +, -, * and /"
         if len(sys.argv) - 1 != 3:
             print(usg)
             sys.exit(1)
