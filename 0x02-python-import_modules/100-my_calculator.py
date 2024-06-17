@@ -14,15 +14,14 @@ if __name__ == "__main__":
         b = int(sys.argv[3])
         sign = sys.argv[2]
         if sign == "+":
-            return"{} {} {} = {} ".format(a, sign, b, add(a, b))
+            print("{} {} {} = {} ".format(a, sign, b, add(a, b)))
         elif sign == "-":
-            return "{} {} {} = {} ".format(a, sign, b, sub(a, b))
+            print("{} {} {} = {} ".format(a, sign, b, sub(a, b)))
         elif sign == "":
-            return "{} {} {} = {} ".format(a, sign, b, mul(a, b))
+            print("{} {} {} = {} ".format(a, sign, b, mul(a, b)))
         elif sign == "/":
-            return "{} {} {} = {} ".format(a, sign, b, div(a, b))
+            print("{} {} {} = {} ".format(a, sign, b, div(a, b)))
         else:
             sys.stderr.write(msg)
             sys.exit(1)
-
-    print(calculator())
+#    print(calculator())
