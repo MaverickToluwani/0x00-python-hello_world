@@ -4,6 +4,6 @@ def multiple_returns(sentence):
     firstChar = sentence[0]
 
     if sentence == "" or sentence is None:
-        return None, None
+        return 0, None
     else:
         return sent_len, firstChar
