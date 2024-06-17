@@ -11,7 +11,7 @@ def roman_to_int(roman_string) -> int:
             }
 
     Rn = roman_string
-    if type(Rn) != str or Rn is None:
+    if not isinstance(Rn, str) or Rn is None:
         return 0
     if roman_string in tbl:
         return tbl[roman_string]
