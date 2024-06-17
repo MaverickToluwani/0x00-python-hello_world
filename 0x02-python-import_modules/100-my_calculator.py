@@ -7,7 +7,7 @@ if __name__ == "__main__":
         usg = "Usage: ./100-my_calculator.py <a> <operator> <b>\n"
         msg = "Unknown operator. Available operators: +, -, * and /\n"
         if len(sys.argv)-1 != 3:
-            sys.stderr.write(usg)
+            print(usg)
             sys.exit(1)
 
         a = int(sys.argv[1])
@@ -17,11 +17,11 @@ if __name__ == "__main__":
             print("{} {} {} = {} ".format(a, sign, b, add(a, b)))
         elif sign == "-":
             print("{} {} {} = {} ".format(a, sign, b, sub(a, b)))
-        elif sign == "":
+        elif sign == "*":
             print("{} {} {} = {} ".format(a, sign, b, mul(a, b)))
         elif sign == "/":
             print("{} {} {} = {} ".format(a, sign, b, div(a, b)))
         else:
-            sys.stderr.write(msg)
+            print(msg)
             sys.exit(1)
 #    print(calculator())
