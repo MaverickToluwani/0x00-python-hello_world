@@ -22,7 +22,7 @@ def roman_to_int(roman_string) -> int:
             elif len(Rn) == 2:
                 return tbl[Rn[0:]]
         elif len(Rn) >= 3 and len(Rn) < 6:
-            c3 = tbl[Rn[0]] + tbl[Rn[1]]
+            c3 = tbl[Rn[0]] + tbl[Rn[1:]]
             if len(Rn) == 3:
                 return c3
             elif len(Rn) == 4:
