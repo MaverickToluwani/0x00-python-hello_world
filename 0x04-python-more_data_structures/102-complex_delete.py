@@ -5,6 +5,6 @@ def complex_delete(a_dictionary, value):
     count = 0
     for val in val_list:
         if val == value:
-            del(a_dictionary[key_list[count]])
+            del (a_dictionary[key_list[count]])
         count += 1
     return a_dictionary
