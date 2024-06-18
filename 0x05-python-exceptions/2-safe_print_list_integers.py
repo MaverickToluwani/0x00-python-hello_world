@@ -2,6 +2,9 @@
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
     if x == 0:
+        print()
+        return count
+    if my_list == []:
         return count
     try:
         for idx in range(x):
