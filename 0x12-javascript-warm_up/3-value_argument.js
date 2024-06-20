@@ -8,7 +8,5 @@ for (i in args) {
 if (count <= 2) {
   console.log('No argument');
 } else {
-  for (i = 2; i < count; i++) {
-    console.log(args[i]);
+  console.log(args[2]);
   }
-}
