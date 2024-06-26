@@ -28,8 +28,10 @@ if __name__ == "__main__":
     count = 0
     for row in rows:
         for col in row:
-            print(f"{col}, ", end="") if count < num_cities-1 else print(col)
+            res = f"{col}, " if count < num_cities-1 else col
+        print(res, end="")
         count += 1
+    print()
 
     cur.close()
     db.close()
