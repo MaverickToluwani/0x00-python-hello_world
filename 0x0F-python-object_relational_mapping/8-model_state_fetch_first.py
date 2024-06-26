@@ -22,8 +22,8 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    res = session.query(State.id, State.name).filter(State.id == 1).first()
-    if res:
-        print(f"{res[0]}: {res[1]}")
+    res = session.query(State.id, State.name).filter(State.id == 6).all()
+    for i in res:
+        print(f"{i[0]}: {i[1]}")
 
     session.close()
