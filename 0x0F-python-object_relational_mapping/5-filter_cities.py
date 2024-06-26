@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" A script that lists all cities from the database hbtn_0e_4_usa """
+""" A  script that takes in the name of a state as an
+    argument and lists all cities of that state, using
+    the database hbtn_0e_4_usa
+"""
 
 import MySQLdb
 from sys import argv
@@ -15,14 +18,17 @@ if __name__ == "__main__":
             )
     cur = db.cursor()
     cur.execute(
-            "SELECT cities.id, cities.name, states.name\
-                    FROM cities INNER JOIN states\
+            "SELECT cities.name FROM cities INNER JOIN states\
                     ON cities.state_id = states.id\
-                    ORDER BY cities.id"
-            )
+                    WHERE states.name = %s", (argv[4], )
+                    )
     rows = cur.fetchall()
+    num_cities = len(rows)
+    count = 0
     for row in rows:
-        print(row)
+        for col in row:
+            print(f"{col}, ", end="") if count < num_cities-1 else print(col)
+        count += 1
 
     cur.close()
     db.close()
