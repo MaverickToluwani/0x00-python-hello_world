@@ -23,6 +23,7 @@ if __name__ == "__main__":
     session = Session()
 
     res = session.query(State.id, State.name).filter(State.id == 1).first()
-    print(f"{res[0]}: {res[1]}")
+    if res:
+        print(f"{res[0]}: {res[1]}")
 
     session.close()
