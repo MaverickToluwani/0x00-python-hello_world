@@ -22,8 +22,7 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    res = session.query(State.id, State.name).filter(State.id == 6).first()
-
+    res = session.query(State.id, State.name).filter(State.id == 1).first()
     print(f"{res[0]}: {res[1]}") if res else print()
 
     session.close()
