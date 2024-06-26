@@ -10,7 +10,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
-    url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3])
+    url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            argv[1], argv[2], argv[3]
+            )
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
@@ -20,11 +22,6 @@ if __name__ == '__main__':
     session = Session()
 
     row = session.query(State.id, State.name).all()
-    
     for r in row:
         print(f"{r[0]}: {r[1]}")
-        
-
     session.close()
-
-
