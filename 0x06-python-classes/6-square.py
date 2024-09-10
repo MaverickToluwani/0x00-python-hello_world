@@ -81,6 +81,7 @@ class Square:
         """
         if self.size == 0:
             print()
+            return
         for y_coor in range(self.position[1]):
             print()
         for row in range(self.size):
