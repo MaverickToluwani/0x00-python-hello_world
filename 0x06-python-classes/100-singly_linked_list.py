@@ -16,7 +16,7 @@ class Node:
             data (int): value of the node
             __next_node (Node): Pointer to the Node class
         """
-        self.__data = data
+        self.data = data
         self.__next_node = next_node
 
     @property
@@ -32,7 +32,7 @@ class Node:
         Raises:
             TypeError If value if not an integer
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -50,7 +50,7 @@ class Node:
         Raises:
             TypeError: If next_node is not a Node object
         """
-        if value is not None or type(value) != Node:
+        if not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -76,7 +76,7 @@ class SinglyLinkedList:
     def __str__(self):
         curr = self.__head
         nodelist = []
-        while curr != None:
+        while curr is not None:
             nodelist.append((curr.data))
             curr = curr.next_node
         sorter = sorted(nodelist)
