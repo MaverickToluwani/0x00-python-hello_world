@@ -80,7 +80,6 @@ class Square:
         square_img = ""
 
         if self.size == 0:
-            square_img += "\n"
             return square_img
 
         for y_coor in range(self.__position[1]):
